@@ -50,6 +50,7 @@ def join():
 
 @sockets.route("/poker/texas-holdem")
 def texasholdem_poker_game(ws: WebSocket):
+    print("IM HERE")
     return poker_game(ws, "texas-holdem-poker:lobby")
 
 
