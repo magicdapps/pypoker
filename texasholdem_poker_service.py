@@ -1,3 +1,4 @@
+from dotenv import load_dotenv
 import logging
 import redis
 import os
@@ -6,6 +7,7 @@ from poker.game_server_redis import GameServerRedis
 from poker.game_room import GameRoomFactory
 from poker.poker_game_holdem import HoldemPokerGameFactory
 
+load_dotenv()
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG if 'DEBUG' in os.environ else logging.INFO)

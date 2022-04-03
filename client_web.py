@@ -3,6 +3,7 @@ import uuid
 
 import gevent
 import redis
+from dotenv import load_dotenv
 from flask import Flask, render_template, redirect, session, url_for, request
 from flask_sockets import Sockets
 from geventwebsocket.websocket import WebSocket
@@ -11,6 +12,8 @@ from poker.channel import ChannelError, MessageFormatError, MessageTimeout
 from poker.channel_websocket import ChannelWebSocket
 from poker.player import Player
 from poker.player_client import PlayerClientConnector
+
+load_dotenv()
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "!!_-pyp0k3r-_!!"
